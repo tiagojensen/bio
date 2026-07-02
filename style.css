@@ -4,22 +4,44 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Inter, sans-serif;
-  background: #07080c;
-  color: #fff;
-  background:
-    linear-gradient(rgba(0, 0, 0, .82), rgba(0, 0, 0, .94)),
-    url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1974&auto=format&fit=crop");
-  background-size: cover;
-  background-position: center;
+body{
+    font-family:'Inter',sans-serif;
+    background:#050608;
+    color:#fff;
 }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 60px 20px;
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:80px 20px;
+}
+
+.hero::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(circle at top,
+      rgba(38, 99, 235, .10),
+      transparent 45%),
+
+    radial-gradient(circle at bottom,
+      rgba(147, 51, 234, .05),
+      transparent 50%);
+
+  pointer-events: none;
+
 }
 
 .container {
@@ -39,9 +61,13 @@ body {
   margin-bottom: 25px;
 }
 
-.name {
-  font-size: clamp(52px, 8vw, 82px);
-  font-weight: 800;
+.name{
+    font-size:clamp(40px,8vw,82px);
+    font-weight:800;
+    white-space:nowrap;
+    letter-spacing:-2px;
+    color:#fff;
+    margin-bottom:36px;
 }
 
 .username {
@@ -74,8 +100,6 @@ body {
 
   border-radius: 24px;
 
-  padding: 34px;
-
   transition: .25s;
 
   backdrop-filter: blur(12px);
@@ -95,7 +119,12 @@ body {
 
   width: 100%;
   margin-bottom: 22px;
+  padding: 42px;
 
+}
+
+.small-card {
+  padding: 32px;
 }
 
 .cards-grid {
@@ -127,6 +156,10 @@ body {
   font-weight: 700;
 
   margin-bottom: 20px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
 
 }
 
@@ -259,22 +292,13 @@ body {
 
   }
 
-  .name {
-
-    font-size: 54px;
-
-  }
-
-  .username {
-
-    font-size: 22px;
-
-  }
-
   .description {
-
-    font-size: 18px;
-
+    max-width: 700px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    color: #ddd;
   }
 
   .card-title {
